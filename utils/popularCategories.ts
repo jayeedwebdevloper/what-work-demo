@@ -1,6 +1,6 @@
 export const services = [
     {
-        src: '/images/categories/1.jpg ',
+        src: './images/categories/1.jpg ',
         alt: 'Cleaning',
         title: 'House cleaning',
         description: 'Get professional cleaning service swiftly.'
