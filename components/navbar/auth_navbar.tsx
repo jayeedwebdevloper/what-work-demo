@@ -56,7 +56,7 @@ const AuthNavbar = () => {
       key: "settings",
       icon: settingsIcon,
       text: "Settings",
-      href: "/settings",
+      href: `${pathname === "/client/dashboard" || pathname.startsWith("/client/dashboard/") ? "/client/account_settings" : "/professional/account_settings"}`, // for now it is conditionally when enter the dashboard then. but it need to make with context user type
     },
     {
       key: "logout",
@@ -75,7 +75,7 @@ const AuthNavbar = () => {
     >
       <NavbarBrand className="overflow-hidden">
         <Link href="/" className="flex justify-start text-white items-center gap-1 overflow-hidden">
-          <Image alt="WhatWorks" className="min-w-24 w-52" src={logo_dark} />
+          <Image alt="WhatWorks" className="min-w-24 w-36" src={logo_dark} />
           {/* <span className={clsx("font-semibold font-sans", fontSans.variable)}>
             WhatWorks
           </span> */}
@@ -98,7 +98,7 @@ const AuthNavbar = () => {
           {openDropdown && (
             <Box className="absolute right-0 top-14 bg-white border border-dark border-opacity-20 shadow-lg rounded-md px-4 py-2">
               {avatarDropdownMenu.map((menu) => (
-                <Link key={menu.key} href={menu.href} className={menu.key==="projects" ? "md:hidden":""}>
+                <Link key={menu.key} href={menu.href} className={menu.key === "projects" ? "md:hidden" : ""}>
                   <Box
                     className={`flex items-center gap-4 p-2 px-3 ${menu.key === "logout" ? "" : "border-b"} border-dark border-opacity-20 hover:!bg-fadedwhite hover:!bg-opacity-20 hover:rounded-lg`}
                   >

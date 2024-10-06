@@ -5,8 +5,10 @@ import { Box, Typography, Button, List, ListItem, ListItemIcon, ListItemText } f
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
 import { useTheme } from '@mui/material/styles';
+import { useRouter } from 'next/navigation';
 
 const VerificationWidget = () => {
+  const router = useRouter()
   const theme = useTheme();
   const verifications = [
     { name: 'Top Professional', status: 'join' },
@@ -19,7 +21,7 @@ const VerificationWidget = () => {
   return (
     <Box
       sx={{
-        
+
         borderRadius: 2,
         padding: 2,
         color: 'white',
@@ -28,7 +30,7 @@ const VerificationWidget = () => {
       }}
       className='bg-main'
     >
-      <Typography  className='text-white font-semibold text-lg' gutterBottom>
+      <Typography className='text-white font-semibold text-lg' gutterBottom>
         Verifications
       </Typography>
       <List className='font-light'>
@@ -45,7 +47,7 @@ const VerificationWidget = () => {
               {item.status === 'join' && (
                 <Button
                   variant="text"
-                  
+                  onClick={() => router.push("/membership")}
                   className='text-secondary text-md mr-3'
                 >
                   Join
@@ -58,10 +60,11 @@ const VerificationWidget = () => {
       <Button
         variant="contained"
         fullWidth
+        onClick={() => router.push('/certification')}
         sx={{
           backgroundColor: theme.palette.secondary.main,
           color: theme.palette.secondary.contrastText,
-          
+
           marginTop: 2,
         }}
         className='bg-secondary text-black'
