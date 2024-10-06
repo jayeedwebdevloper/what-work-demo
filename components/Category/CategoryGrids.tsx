@@ -9,7 +9,7 @@ export default function CategoryGrids() {
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
                 {services.map((service, index) => (
                     <div key={index} className='flex flex-col items-start'>
-                        <Image src={service.src} alt={service.alt} className='rounded-md h-[220px] object-cover' width={500} height={300} />
+                        <Image src={service?.src} alt={service?.alt} className='rounded-md h-[220px] object-cover' width={500} height={300} />
 
                         <h1 className='text-sm lg:text-base font-bold mt-3 text-start'>
                             {service.title}
